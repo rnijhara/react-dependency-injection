@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Provider} from "./ioc/ioc.react";
+import {container} from "./ioc/ioc";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider container={container}>
+      <App/>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
